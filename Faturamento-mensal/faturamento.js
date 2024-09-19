@@ -1,7 +1,5 @@
 const fs = require("fs");
-const dataMonth = fs.readFileSync("dados.json", "utf8");
-
-console.log(JSON.parse(dataMonth))
+const dataMonth = JSON.parse(fs.readFileSync("dados.json", "utf8"));
 
 var total = 0 ;
 var count = 0;
@@ -29,7 +27,6 @@ average = total/count;
 for(let data in dataMonth){
 	
     if(dataMonth[data].valor > average){
-		console.log("AQUI")
         countMax += 1;
     }   
 }
